@@ -1,0 +1,40 @@
+        <?php include_once('success.html') ?>
+<table class="table table-hover">
+    <tr>
+        <th>
+            login
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            Full name
+        </th>
+        <th>
+            role
+        </th>
+    </tr>
+    <tbody>
+        <?php foreach($args['users'] as $user) {
+        ?>
+            <tr class="clickableRow" onclick="window.location='/profile?id=<?= $user['id'] ?>'">
+                <td class="col-md-3">
+                    <?= $user['login'] ?>
+                </td>
+                <td class="col-md-3">
+                    <?= $user['email'] ?>
+                </td>
+                <td class="col-md-3">
+                    <?= $user['fio'] ?>
+                </td>
+                <td class="col-md-3">
+                    <?=
+                        $user['role'] == 2 ? 'admin' : 'user';
+                    ?>
+                </td>
+            </tr>
+        <?php
+        } ?>
+    </tbody>
+
+</table>

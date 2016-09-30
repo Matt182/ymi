@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <?php include_once 'dependencies.html'; ?>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <form class="col-md-offset-4 col-md-4" action="registrate" method="post">
+                <?php include_once('error.html') ?>
+
+                <div class="form-group">
+                    <label for="login">Login</label>
+                    <input class="form-control" type="text" name="login">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="fio">Full name</label>
+                    <input class="form-control" type="text" name="fio">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password">
+                </div>
+
+                <input type="hidden" name="role" value="1">
+
+                <input class="btn btn-default" type="submit" value="Sign On">
+            </form>
+
+        </div>
+        <div class="row">
+            <a class="col-md-offset-7" href="/login">Login</a>
+        </div>
+    </div>
+
+</body>
+</html>

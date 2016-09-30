@@ -1,0 +1,7 @@
+<?php
+putenv ('driver=driver');
+putenv ('dbname=name');
+putenv ('host=localhost');
+putenv ('username=uname');
+putenv ('pass=upass');
+?>

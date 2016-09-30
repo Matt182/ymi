@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>profile</title>
+        <?php include_once 'dependencies.html'; ?>
+    </head>
+
+    <body>
+        <div class="container">
+            <?php include_once('header.html'); ?>
+            <div class="row">
+                <dl class="dl-horizontal">
+                <p>
+                    <dt class="col-sm-2 text-right">Login: </dt><dd><?= $args['user']['login'] ?></dd>
+                </p>
+                <p>
+                    <dt class="col-sm-2 text-right">Full name: </dt><dd><?= $args['user']['fio'] ?></dd>
+                </p>
+                <p>
+                    <dt class="col-sm-2 text-right">Email: </dt><dd><?= $args['user']['email'] ?></dd>
+                </p>
+                <p>
+                    <dt class="col-sm-2 text-right">Role: </dt><dd><?= $args['user']['role'] == 2 ? 'admin' : 'user' ?></dd>
+                </p>
+                </dl>
+            </div>
+            <?php if($_SESSION['user']['role'] == '2' && $_SESSION['user']['id'] != $args['user']['id']) { ?>
+                <form class="text-right" action="profile/delete" method="post">
+                    <input type="hidden" name="id" value="<?= $args['user']['id'] ?>">
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            <?php } ?>
+            <?php
+                if($_SESSION['user']['id'] == $args['user']['id'] || $_SESSION['user']['role'] == '2') {
+                    include_once('editUser.html');
+                }
+            ?>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Users List</title>
+
+    <?php include_once 'dependencies.html'; ?>
+</head>
+
+<body>
+    <div class="container">
+        <?php include_once('header.html'); ?>
+        <?php include_once('error.html') ?>
+        <?php if($_SESSION['user']['role'] > 1) {
+            include_once('createUser.html');
+        } ?>
+        <div class="row bg-info">
+            <p>
+                <form name="filterAndOrder" class="form-inline" action="filterandorder" method="post">
+                    <div class="form-group col-md-12">
+                        <label for="filter">Search</label>
+                        <input class="form-control" type="text" name="filter">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="radio-inline">
+                            <input type="radio" name="login" value="asc"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="login" value="desc"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-group col-md-3 col-md-offset-3">
+                        <label class="radio-inline">
+                            <input type="radio" name="fio" value="asc"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="fio" value="desc"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="form-control" name='role'>
+                                <option></option>
+                                <option value = '2'>Admin</option>
+                                <option value = '1'>User</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-info" type="button" onclick="ajaxFilterAndOrder()">Run</button>
+                    </div>
+
+
+                </form>
+            </p>
+
+        </div>
+
+        <div class="row">
+            <div id="userList">
+                <?php include_once('userList.html'); ?>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="/src/view/js/createUser.js" ></script>
+    <script type="text/javascript" src="/src/view/js/filterAndOrder.js" ></script>
+
+</body>
+</html>

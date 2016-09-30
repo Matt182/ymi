@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <?php include_once 'dependencies.html'; ?>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <form class="col-md-offset-4 col-md-4" action="/authorize" method="post">
+                    <?php include_once('error.html') ?>
+
+                    <div class="form-group">
+                        <label for="login">Login</label>
+                        <input class="form-control" type="text" name="login" value=""><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" name="password" value="">
+                    </div>
+                    <button type="submit" class="btn btn-default">login</button>
+                </form>
+            </div>
+            <div class="row">
+                <p class="col-md-offset-4 col-md-4">
+                    <a href="/registration">Not registered?</a>
+                </p>
+
+            </div>
+        </div>
+    </body>
+</html>

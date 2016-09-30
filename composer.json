@@ -1,0 +1,8 @@
+{
+    "name": "matt/ymi",
+    "autoload": {
+        "psr-4": {
+            "ymi\\": "src/"
+        }
+    }
+}

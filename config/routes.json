@@ -1,0 +1,57 @@
+{
+    "": {
+        "controller": "UserListController",
+        "method": "index",
+        "restriction": 1
+    },
+    "authorize": {
+        "controller": "AuthController",
+        "method": "authorize",
+        "restriction": 0
+    },
+    "login": {
+        "controller": "PageController",
+        "method": "login",
+        "restriction": 0
+    },
+    "logout": {
+        "controller": "AuthController",
+        "method": "logout",
+        "restriction": 1
+    },
+    "registration": {
+        "controller": "PageController",
+        "method": "registration",
+        "restriction": 0
+    },
+    "registrate": {
+        "controller": "AuthController",
+        "method": "registrate",
+        "restriction": 0
+    },
+    "profile": {
+        "controller": "ProfileController",
+        "method": "index",
+        "restriction": 1
+    },
+    "filterandorder": {
+        "controller": "UserListController",
+        "method": "filterAndOrder",
+        "restriction": 1
+    },
+    "create": {
+        "controller": "UserListController",
+        "method": "create",
+        "restriction": 2
+    },
+    "profile/save": {
+        "controller": "ProfileController",
+        "method": "save",
+        "restriction": 1
+    },
+    "profile/delete": {
+        "controller": "ProfileController",
+        "method": "delete",
+        "restriction": 2
+    }
+}
